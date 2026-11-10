@@ -12,6 +12,11 @@ Login: username **sajid** — you create the password at first logon.
 ## First logon
 Open the site → **First logon** screen → username `sajid`, your `SETUP_CODE`, and the password you choose (8+ characters). After that the screen never appears again (the code is then useless; you may delete it from the environment).
 
+## Records & Export (top bar → "Records")
+- **Download to Excel:** CSV files (they open in Excel) for invoices, quotations, delivery notes (summary and line items), jobs, the accounting journal, chart of accounts and cancelled invoices, plus a full JSON backup.
+- **Delete / restore:** invoices, quotations, delivery notes and jobs. Deleting an invoice removes it from the accounts too, but it is blocked while receipts are recorded against it (delete those receipts in Accounting first). A deleted invoice's number is never reused; it is kept under *Cancelled invoices* and can be restored.
+- **Edit:** open a record with its **Load** button (Invoice, Quotation, Delivery Note, Job), change it, press Save. Saving a delivery note or quotation again replaces the old copy.
+
 ## Forgot the password
 In the Neon SQL editor run: `DELETE FROM app_auth;` — everyone is signed out and the first-logon screen returns (needs `SETUP_CODE`). Data is untouched.
 
